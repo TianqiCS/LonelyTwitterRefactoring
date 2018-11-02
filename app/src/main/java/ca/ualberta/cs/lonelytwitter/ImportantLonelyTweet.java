@@ -1,13 +1,15 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import android.util.Log;
+
 import java.util.Date;
 
-public class NormalLonelyTweet extends LonelyTweet {
+public class ImportantLonelyTweet extends LonelyTweet {
 
-	public NormalLonelyTweet() {
+	public ImportantLonelyTweet() {
 	}
 
-	public NormalLonelyTweet(String text, Date date) {
+	public ImportantLonelyTweet(String text, Date date) {
 		this.tweetDate = date;
 		this.tweetBody = text;
 	}
@@ -24,10 +26,12 @@ public class NormalLonelyTweet extends LonelyTweet {
 
 	@Override
 	public String toString() {
+		String string = getTweetDate() + " | " + getTweetBody();
+		Log.i("Important tweet", string);
 		return getTweetDate() + " | " + getTweetBody() ;
 	}
 
 	public String getTweetBody() {
-		return tweetBody;
+		return tweetBody.toUpperCase();
 	}
 }
